@@ -33,3 +33,5 @@ vim.lsp.enable({ "pyright", "clangd" })
 
 -- rounded floating windows
 vim.o.winborder = "rounded"
+
+vim.opt.termguicolors = true
