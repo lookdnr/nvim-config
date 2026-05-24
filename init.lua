@@ -49,6 +49,8 @@ require("lazy").setup({
   { "nvim-tree/nvim-web-devicons" },
   -- markdown rendering
   { "preservim/vim-markdown" },
+  -- word seeking
+  { "folke/flash.nvim" },
 })
 
 require("options")
