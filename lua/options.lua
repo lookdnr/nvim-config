@@ -30,3 +30,19 @@ vim.opt.selection = "inclusive"
 
 -- Enable LSPs defined in ~/.config/nvim/lsp/
 vim.lsp.enable({ "pyright", "clangd" })
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, {
+    border = "rounded",
+    max_width = 80,
+  }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help, {
+    border = "rounded",
+    max_width = 80,
+  }
+)
+
+vim.o.winborder = "rounded"
