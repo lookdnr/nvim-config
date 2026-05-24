@@ -25,39 +25,6 @@ require("lazy").setup({
   -- file search/ ripgrep
   { "nvim-lua/plenary.nvim" },
   { "nvim-telescope/telescope.nvim" },
-  -- tree search
-  { "stevearc/oil.nvim"}, 
-  {
-    "refractalize/oil-git-status.nvim",
-    dependencies = {
-      {
-        "stevearc/oil.nvim",
-        opts = {
-          default_file_explorer = true,
-          view_options = { show_hidden = true },
-          columns = { "icon" },
-          keymaps = {
-            ["<CR>"]  = "actions.select",
-            ["<BS>"]  = "actions.parent",
-            ["g."]    = "actions.toggle_hidden",
-            ["<C-r>"] = "actions.refresh",
-            ["q"]     = "actions.close",
-            ["g?"]    = "actions.show_help",
-          },
-          float = {
-            padding    = 2,
-            max_width  = 80,
-            max_height = 30,
-            border     = "rounded",
-          },
-          win_options = {
-            signcolumn = "yes:2",
-          },
-        },
-      },
-    },
-    config = true,
-  },
   -- git integrations
   { "lewis6991/gitsigns.nvim" },
   { "tpope/vim-fugitive" },

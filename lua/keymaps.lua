@@ -43,5 +43,3 @@ vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<CMD>w<CR>", { desc = "Save file" })
 -- Delete word with Ctrl + backspace
 vim.keymap.set("i", "<C-BS>", "<C-w>", { desc = "Delete word" })
 
--- Oil
-vim.keymap.set("n", "<C-p>", "<CMD>Oil --float<CR>", { desc = "Open file explorer" })
