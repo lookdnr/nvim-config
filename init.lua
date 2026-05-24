@@ -1,0 +1,78 @@
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({ "git", "clone", "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git", lazypath })
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+  -- autocomplete
+  { "saghen/blink.cmp", version = "v1" },
+  -- LSP/ linter/ formatter management
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
+  -- colour scheme
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  -- code parser
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  -- linting
+  { "mfussenegger/nvim-lint" },
+  -- auto formatting
+  { "stevearc/conform.nvim" },
+  -- file search/ ripgrep
+  { "nvim-lua/plenary.nvim" },
+  { "nvim-telescope/telescope.nvim" },
+  -- tree search
+  { "stevearc/oil.nvim"}, 
+  {
+    "refractalize/oil-git-status.nvim",
+    dependencies = {
+      {
+        "stevearc/oil.nvim",
+        opts = {
+          default_file_explorer = true,
+          view_options = { show_hidden = true },
+          columns = { "icon" },
+          keymaps = {
+            ["<CR>"]  = "actions.select",
+            ["<BS>"]  = "actions.parent",
+            ["g."]    = "actions.toggle_hidden",
+            ["<C-r>"] = "actions.refresh",
+            ["q"]     = "actions.close",
+            ["g?"]    = "actions.show_help",
+          },
+          float = {
+            padding    = 2,
+            max_width  = 80,
+            max_height = 30,
+            border     = "rounded",
+          },
+          win_options = {
+            signcolumn = "yes:2",
+          },
+        },
+      },
+    },
+    config = true,
+  },
+  -- git integrations
+  { "lewis6991/gitsigns.nvim" },
+  { "tpope/vim-fugitive" },
+  -- auto pair brackets
+  { "windwp/nvim-autopairs" },
+  -- indent guide
+  { "lukas-reineke/indent-blankline.nvim" },
+  -- nicer status
+  { "nvim-lualine/lualine.nvim" },
+  -- buffer line
+  { "akinsho/bufferline.nvim" },
+  -- dashboard
+  { "nvimdev/dashboard-nvim" },
+})
+
+require("options")
+
+require("keymaps")
