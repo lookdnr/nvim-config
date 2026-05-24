@@ -38,6 +38,10 @@ require("lazy").setup({
   { "akinsho/bufferline.nvim" },
   -- dashboard
   { "nvimdev/dashboard-nvim" },
+  -- icons
+  { "nvim-tree/nvim-web-devicons" },
+  -- markdown rendering
+  { "preservim/vim-markdown" },
 })
 
 require("options")
