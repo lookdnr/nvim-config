@@ -56,3 +56,6 @@ vim.keymap.set("i", "<Tab>", function()
   end
   return "<Tab>"
 end, { expr = true, desc = "Accept completion or tab" })
+
+-- window splits
+vim.keymap.set("n", "<C-l>", "<C-w>v", { desc = "Vertical split" })
