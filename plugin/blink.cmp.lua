@@ -1,7 +1,7 @@
 require("blink.cmp").setup({
   keymap = {
-    preset = "enter",
-    ["<Tab>"]   = { "accept", "fallback" },  -- accept ghost text
+    preset = "none",
+    ["<Tab>"] = { "accept", "snippet_forward", "fallback" },
     ["<Up>"]    = { "select_prev", "fallback" },
     ["<Down>"]  = { "select_next", "fallback" },
     ["<S-Tab>"] = { "select_prev", "fallback" },

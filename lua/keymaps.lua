@@ -41,5 +41,18 @@ vim.keymap.set({ "n", "v", "i" }, "<C-a>", "<Esc>ggVG", {})
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<CMD>w<CR>", { desc = "Save file" })
 
 -- Delete word with Ctrl + backspace
-vim.keymap.set("i", "<C-BS>", "<C-w>", { desc = "Delete word" })
+vim.keymap.set("i", "<C-H>", "<C-w>", { desc = "Delete word" })
+vim.keymap.set("i", "<C-Delete>", "<C-o>dw", { desc = "Delete next word" })
 
+-- tab indenting
+vim.keymap.set("v", ">", ">gv", { desc = "Indent block" })
+vim.keymap.set("v", "<", "<gv", { desc = "Unindent block" })
+
+-- tab autocomplete
+vim.keymap.set("i", "<Tab>", function()
+  local blink = require("blink.cmp")
+  if blink.is_visible() or blink.snippet_active() then
+    return blink.accept()
+  end
+  return "<Tab>"
+end, { expr = true, desc = "Accept completion or tab" })
