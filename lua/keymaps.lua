@@ -34,6 +34,9 @@ vim.keymap.set("i", "<C-c>", '<C-o>"+y', {})
 vim.keymap.set({ "n", "v" }, "<C-v>", '"+p', {})
 vim.keymap.set("i", "<C-v>", '<C-r>+', {})
 
+-- Undo
+vim.keymap.set("i", "<C-z>", "<C-o>u", { desc = "Undo" })
+
 -- Select all (Ctrl+A)
 vim.keymap.set({ "n", "v", "i" }, "<C-a>", "<Esc>ggVG", {})
 
