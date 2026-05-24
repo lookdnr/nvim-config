@@ -17,7 +17,14 @@ require("lazy").setup({
   -- colour scheme
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   -- code parser
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    opts = {
+      ensure_installed = { "lua", "python", "c", "cpp", "vimdoc", "markdown", "markdown_inline" },
+      auto_install = true,
+    },
+  },
   -- linting
   { "mfussenegger/nvim-lint" },
   -- auto formatting
