@@ -1,11 +1,12 @@
 # Keymap cheatsheet
-this
 
 |*Feature*|*Kepmap*|
 |---------|--------|
 |Fuzzy find files|Ctrl + p|
 |Ripgrep|Ctrl + f|
-|Split pane left|Ctrl + l|
+|Split vertical|Ctrl + l|
+|Split horizontal|Ctrl + b|
+|Close split|Ctrl + q|
 |Flash find|s + chars|
 |Close buffer|Ctrl + w|
 |Indent block|Shift + >|

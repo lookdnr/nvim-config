@@ -62,3 +62,5 @@ end, { expr = true, desc = "Accept completion or tab" })
 
 -- window splits
 vim.keymap.set("n", "<C-l>", "<C-w>v", { desc = "Vertical split" })
+vim.keymap.set("n", "<C-b>", "<CMD>sp<CR>", { desc = "Horizontal split" })
+vim.keymap.set("n", "<C-q>", "<CMD>close<CR>", { desc = "Close split" })

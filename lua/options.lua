@@ -34,4 +34,16 @@ vim.lsp.enable({ "pyright", "clangd" })
 -- rounded floating windows
 vim.o.winborder = "rounded"
 
+-- file name indicator
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  callback = function()
+    local ft = vim.bo.filetype
+    if ft == "dashboard" or ft == "" then
+      vim.opt_local.winbar = ""
+    else
+      vim.opt_local.winbar = "%=%f %m"
+    end
+  end,
+})
+
 vim.opt.termguicolors = true
