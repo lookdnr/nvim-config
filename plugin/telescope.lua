@@ -3,23 +3,32 @@ local builtin = require("telescope.builtin")
 require("telescope").setup({
   defaults = {
     layout_strategy = "horizontal",
-    layout_config = { 
-        width = 0.90,
-        height = 0.85,
-        preview_width = 0.55 
+    layout_config = {
+      preview_cutoff = 1,
+      width = 0.90,
+      height = 0.85,
+      horizontal = {
+      preview_width = 0.55,
+      previewer = true,
+      },
+      vertical = {
+        preview_height = 0.50,
+      },
     },
     file_ignore_patterns = {
       ".git/.*",
       "node%_modules/.*",
     },
-  },
-  pickers = {
-    find_files = {
+    },
+    pickers = {
+      find_files = {
       hidden = true,
       find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
     },
     live_grep = {
       additional_args = { "--hidden", "--glob", "!.git/*" },
+      layout_strategy = "vertical",
+      previewer = true,
     },
   },
 })
