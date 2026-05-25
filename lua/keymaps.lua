@@ -21,7 +21,6 @@ vim.keymap.set({ "n", "i", "v" }, "<S-Right>", "<S-Right>", {})
 vim.keymap.set({ "n", "i", "v" }, "<S-Up>",    "<S-Up>",    {})
 vim.keymap.set({ "n", "i", "v" }, "<S-Down>",  "<S-Down>",  {})
 
-
 -- Cut (Ctrl+X)
 vim.keymap.set({ "n", "v" }, "<C-x>", '"+d', {})
 vim.keymap.set("i", "<C-x>", '<C-o>"+d', {})
@@ -70,3 +69,7 @@ vim.keymap.set("n", "<leader>td", "<CMD>Trouble diagnostics toggle<CR>",        
 vim.keymap.set("n", "<leader>tb", "<CMD>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Buffer diagnostics" })
 vim.keymap.set("n", "<leader>ts", "<CMD>Trouble symbols toggle<CR>",                  { desc = "Symbols" })
 vim.keymap.set("n", "<leader>tl", "<CMD>Trouble lsp toggle<CR>",                      { desc = "LSP definitions" })
+
+-- page jumps
+vim.keymap.set({ "n", "v" }, "<C-Home>", "gg", { desc = "Jump to top" })
+vim.keymap.set({ "n", "v" }, "<C-End>",  "G",  { desc = "Jump to bottom" })

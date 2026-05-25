@@ -65,4 +65,6 @@ require("lazy").setup({
         "nvim-lua/plenary.nvim"
     },
   },
+  -- terminal
+  { "akinsho/toggleterm.nvim" },
 })
