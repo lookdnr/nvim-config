@@ -53,3 +53,11 @@ vim.opt.termguicolors = true
 
 -- disbale select mode
 vim.opt.selectmode = {}
+
+-- disable eol buffers on dashboard
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "dashboard", "alpha", "starter" },
+  callback = function()
+    vim.opt_local.fillchars = { eob = " " }
+  end,
+})
