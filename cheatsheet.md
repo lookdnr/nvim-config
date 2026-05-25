@@ -26,3 +26,4 @@
 |Jump to top|Ctrl + Home|
 |Jump to end|Ctrl + End|
 |Toggle terminal|Ctrl + t|
+|Dismiss notif|<leader> + n + d|

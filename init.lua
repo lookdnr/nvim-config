@@ -47,7 +47,10 @@ require("lazy").setup({
   -- buffer line
   { "akinsho/bufferline.nvim" },
   -- dashboard
-  { "nvimdev/dashboard-nvim" },
+  {
+    "nvimdev/dashboard-nvim", 
+    dependencies = { "folke/noice.nvim" },
+  },
   -- icons
   { "nvim-tree/nvim-web-devicons" },
   -- markdown rendering
@@ -67,4 +70,12 @@ require("lazy").setup({
   },
   -- terminal
   { "akinsho/toggleterm.nvim" },
+  -- noice
+  { "folke/noice.nvim", 
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify"
+    },
+  },
 })

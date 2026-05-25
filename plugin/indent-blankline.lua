@@ -1,13 +1,14 @@
 require("ibl").setup({
   indent = {
-    char = "│",  -- the guide line character
+    char = "│",
   },
   scope = {
-    enabled = true,   -- highlight the current scope
+    enabled = true,
     show_start = true,
     show_end = false,
   },
   exclude = {
-    filetypes = { "dashboard", "help", "terminal", "lazy", "mason"},
+    filetypes = { "dashboard", "help", "terminal", "lazy", "mason", "noice", "" },
+    buftypes = { "nofile", "prompt", "popup", "terminal" },
   },
 })

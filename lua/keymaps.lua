@@ -73,3 +73,6 @@ vim.keymap.set("n", "<leader>tl", "<CMD>Trouble lsp toggle<CR>",                
 -- page jumps
 vim.keymap.set({ "n", "v" }, "<C-Home>", "gg", { desc = "Jump to top" })
 vim.keymap.set({ "n", "v" }, "<C-End>",  "G",  { desc = "Jump to bottom" })
+
+-- dismiss notifs
+vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<cr>", { desc = "Dismiss notifications" })

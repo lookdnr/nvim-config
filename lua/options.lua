@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- Hint: use `:h <option>` to figure out the meaning if needed
-vim.opt.clipboard = 'unnamedplus'   -- use system clipboard 
+vim.opt.clipboard = 'unnamedplus'   -- use system clipboard
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 vim.opt.mouse = 'a'                 -- allow the mouse to be used in nvim
 
@@ -25,7 +25,6 @@ vim.opt.incsearch = true            -- search as characters are entered
 vim.opt.hlsearch = false            -- do not highlight matches
 vim.opt.ignorecase = true           -- ignore case in searches by default
 vim.opt.smartcase = true            -- but make it case sensitive if an uppercase is entered
-
 vim.opt.selectmode = { "mouse", "key" }
 vim.opt.keymodel = { "startsel", "stopsel" }
 vim.opt.selection = "inclusive"
@@ -40,7 +39,8 @@ vim.o.winborder = "rounded"
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   callback = function()
     local ft = vim.bo.filetype
-    if ft == "dashboard" or ft == "" then
+    local bt = vim.bo.buftype
+    if ft == "dashboard" or ft == "" or ft == "noice" or bt == "nofile" or bt == "prompt" then
       vim.opt_local.winbar = ""
     else
       vim.opt_local.winbar = "%=%f %m"
@@ -48,10 +48,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   end,
 })
 
-vim.opt.termguicolors = true
-
-
--- disbale select mode
+-- disable select mode
 vim.opt.selectmode = {}
 
 -- disable eol buffers on dashboard
