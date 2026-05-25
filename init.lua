@@ -24,7 +24,7 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     opts = {
-      ensure_installed = { "lua", "python", "c", "cpp", "vimdoc", "markdown", "markdown_inline" },
+      ensure_installed = { "lua", "python", "c", "cpp", "vimdoc", "markdown", "markdown_inline", "latex" },
       auto_install = true,
     },
   },
@@ -78,4 +78,6 @@ require("lazy").setup({
       "rcarriga/nvim-notify"
     },
   },
+  -- markdown support
+  { "iamcco/markdown-preview.nvim", ft = { "markdown" }, build = "cd app && npm install" },
 })

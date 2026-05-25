@@ -28,3 +28,4 @@
 |Toggle terminal|Ctrl + t|
 |Dismiss notif|<leader> + n + d|
 |Jump to dashboard|<leader> + h|
+|Markdown preview|<leader> + m + p|

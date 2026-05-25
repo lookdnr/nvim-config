@@ -79,3 +79,6 @@ vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<cr>", { desc = "Dismiss not
 
 -- return to dashboard
 vim.keymap.set("n", "<leader>h", "<cmd>Dashboard<cr>", { desc = "Home / Dashboard" })
+
+-- markdown preview 
+vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", { desc = "Toggle Markdown Preview" })
