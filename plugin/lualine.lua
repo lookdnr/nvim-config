@@ -4,6 +4,12 @@ require("lualine").setup({
     component_separators = { left = "", right = "" },
     section_separators   = { left = "", right = "" },
     globalstatus = true,  -- single statusline across all splits
+    disabled_filetypes = { statusline = { 
+        "dashboard", 
+        "alpha", 
+        "starter" 
+    }, 
+  },
   },
   sections = {
     lualine_a = { "mode" },
