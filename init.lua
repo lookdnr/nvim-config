@@ -8,6 +8,9 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+require("options")
+require("keymaps")
+
 require("lazy").setup({
   -- autocomplete
   { "saghen/blink.cmp", version = "v1" },
@@ -51,8 +54,15 @@ require("lazy").setup({
   { "preservim/vim-markdown" },
   -- word seeking
   { "folke/flash.nvim" },
+  -- bulk commenting
+  { "numToStr/Comment.nvim" },
+  -- better error management
+  { "folke/trouble.nvim" },
+  -- todo comments
+  { 
+    "folke/todo-comments.nvim",  
+    dependencies = {
+        "nvim-lua/plenary.nvim"
+    },
+  },
 })
-
-require("options")
-
-require("keymaps")

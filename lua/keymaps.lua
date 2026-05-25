@@ -64,3 +64,9 @@ end, { expr = true, desc = "Accept completion or tab" })
 vim.keymap.set("n", "<C-l>", "<C-w>v", { desc = "Vertical split" })
 vim.keymap.set("n", "<C-b>", "<CMD>sp<CR>", { desc = "Horizontal split" })
 vim.keymap.set("n", "<C-q>", "<CMD>close<CR>", { desc = "Close split" })
+
+-- trouble keymaps
+vim.keymap.set("n", "<leader>td", "<CMD>Trouble diagnostics toggle<CR>",              { desc = "Diagnostics" })
+vim.keymap.set("n", "<leader>tb", "<CMD>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Buffer diagnostics" })
+vim.keymap.set("n", "<leader>ts", "<CMD>Trouble symbols toggle<CR>",                  { desc = "Symbols" })
+vim.keymap.set("n", "<leader>tl", "<CMD>Trouble lsp toggle<CR>",                      { desc = "LSP definitions" })

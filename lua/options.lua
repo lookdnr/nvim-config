@@ -1,3 +1,5 @@
+vim.g.mapleader = " "
+
 -- Hint: use `:h <option>` to figure out the meaning if needed
 vim.opt.clipboard = 'unnamedplus'   -- use system clipboard 
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
@@ -47,3 +49,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 })
 
 vim.opt.termguicolors = true
+
+
+-- disbale select mode
+vim.opt.selectmode = {}
