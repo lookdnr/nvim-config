@@ -76,3 +76,6 @@ vim.keymap.set({ "n", "v" }, "<C-End>",  "G",  { desc = "Jump to bottom" })
 
 -- dismiss notifs
 vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<cr>", { desc = "Dismiss notifications" })
+
+-- return to dashboard
+vim.keymap.set("n", "<leader>h", "<cmd>Dashboard<cr>", { desc = "Home / Dashboard" })
