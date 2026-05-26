@@ -37,6 +37,10 @@
 |Toggle comment|g + c + c|
 |Block comment|highlight + g + c|
 |Markdown preview|<leader> + m + p|
+|Unfold under cursor|z + o|
+|Close under cursor|z + c|
+|Unfold all|z + r|
+|Fold all|z + m|
 
 # Windowing
 
