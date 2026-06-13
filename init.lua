@@ -80,4 +80,19 @@ require("lazy").setup({
   },
   -- markdown support
   { "iamcco/markdown-preview.nvim", ft = { "markdown" }, build = "cd app && npm install" },
+  -- LaTeX support
+  {
+  "lervag/vimtex",
+  lazy = false,
+  ft = "tex",
+  config = function()
+    vim.g.vimtex_view_method = "zathura"
+    vim.g.vimtex_compiler_method = "latexmk"
+    vim.g.vimtex_compiler_latexmk = {
+      options = { "-pdf", "-pvc", "-interaction=nonstopmode" }
+    }
+    vim.g.vimtex_syntax_enabled = 1
+    vim.g.vimtex_syntax_conceal_default = 0
+  end
+  },
 })
