@@ -1,18 +1,27 @@
 # My `neovim` config
 
-To get started, clone the repo:
+To get started on Ubuntu, install the configuration at Neovim's standard config path:
 
 ```bash
-git clone https://github.com/lookdnr/nvim-config
-```
-
-Then run 
-
-```bash
+mkdir -p ~/.config
+git clone https://github.com/lookdnr/nvim-config ~/.config/nvim
+cd ~/.config/nvim
 ./install.sh
 ```
 
-Note: this will delete the existing `neovim` installation and replace it with the latest stable build curled from the GitHub repository.
+The installer installs Neovim under `~/.local/opt/nvim`, creates `~/.local/bin/nvim`,
+and installs the external tools used by this configuration. Add the following to
+your shell profile if it is not already present, then open a new shell:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+On first launch, lazy.nvim downloads plugins and Mason installs the configured LSPs.
+The installer currently supports Ubuntu on x86_64 and arm64.
+
+Note: `./install.sh` replaces the Neovim installation managed by this repository,
+but does not delete an existing configuration or other Neovim data.
 
 ## Aesthetic
 
