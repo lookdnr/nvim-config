@@ -1,20 +1,9 @@
 return {
-  cmd = { "pyright-langserver", "--stdio" },
-  filetypes = { "python" },
+  cmd = { "clangd" },
+  filetypes = { "c", "cpp", "objc", "objcpp" },
   root_markers = {
-    "pyproject.toml",
-    "setup.py",
-    "setup.cfg",
-    "requirements.txt",
+    "compile_commands.json",
+    "compile_flags.txt",
     ".git",
-  },
-  settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        useLibraryCodeForTypes = true,
-        diagnosticMode = "openFilesOnly",
-      },
-    },
   },
 }
